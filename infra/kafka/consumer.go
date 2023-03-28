@@ -1,9 +1,13 @@
 package kafka
 
 import (
-  ckafka "github.com/confluentinc/confluent-kafka-go/kafka"
+	"github.com/confluentinc/confluent-kafka-go/kafka"
 )
-
 type KafkaConsumer struct {
-  MessageChannel chan *ckafka
+  MessageChannel chan *kafka.Message
 }
+
+func NewKafkaConsumer(messageChannel chan *kafka.Message) *KafkaConsumer { 
+  return &KafkaConsumer { MessageChannel: messageChannel }
+}
+
