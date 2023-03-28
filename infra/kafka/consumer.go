@@ -4,8 +4,6 @@ import (
 	"fmt"
 	"log"
 	"os"
-	"strconv"
-
 	"github.com/confluentinc/confluent-kafka-go/kafka"
 )
 type KafkaConsumer struct {
