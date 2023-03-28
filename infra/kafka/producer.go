@@ -17,3 +17,15 @@ func NewKafkaProuducer() *kafka.Producer {
 
   return producer;
 }
+
+func Publish (msg string, topic string, producer *kafka.Producer) error {
+  message := &kafka.Message{
+    TopicPartition: kafka.TopicPartition{Topic: &topic, Partition: kafka.PartitionAny},
+    value:          []byte(msg),
+  }
+
+  err := producer.Produce(message, nil)
+  if err != nil { return err }
+  
+  return nil
+}
