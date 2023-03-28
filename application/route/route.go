@@ -6,6 +6,9 @@ type Route struct {
   Positions []Position  `json:"positions"` 
 }
 
-
+type Position struct {
+  Latitude  float64 `json:"latitude"`
+  Longitude float64 `json:"longitude"` 
+}
 
 
