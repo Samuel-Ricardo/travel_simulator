@@ -1,0 +1,13 @@
+services:
+
+  
+  
+  zookeeper:
+    environment:
+     ZOOKEEPER_CLIENT_PORT: 2181
+    extra_hosts:
+      - "host.docker.internal:172.17.0.1"
+
+    image: cofluentinc/cp-zookeeper:latest
+
+version: '3'
