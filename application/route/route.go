@@ -17,3 +17,9 @@ type PartialRoutePosition struct {
 	Position []float64 `json:"position"`
 	Finished bool      `json:"finished"`
 }
+
+func NewRoute() *Route {
+  return &Route{}
+}
+
+
