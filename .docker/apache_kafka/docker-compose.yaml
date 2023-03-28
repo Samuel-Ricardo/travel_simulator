@@ -20,7 +20,19 @@ services:
     ports:
       - "9092:9092"
       - "9094:9094"
-  
+ 
+  kafka-topics-generator:
+    command: >
+      bash -C 
+        "sleep 5s &&
+        kafka-topics --create --topic=route.new-direction --if-not-exists --bootstrap-server=kafka:9092 &&
+        kafka-tipocs --create --topic=route.new-position --if-not-exists --bootstrap-server=kafka:9092"  
+
+    depends_on:
+      - kafka
+    
+    image: cofluentinc/cp-kafka:latest
+
   zookeeper:
     environment:
      ZOOKEEPER_CLIENT_PORT: 2181
