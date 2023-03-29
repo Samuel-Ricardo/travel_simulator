@@ -15,6 +15,9 @@ type Route struct {
 	Positions []Position `json:"positions"`
 }
 
+/*
+* {"clientId":"1","routeId":"1"}
+*/
 type Position struct {
 	Latitude  float64 `json:"latitude"`
 	Longitude float64 `json:"longitude"`
@@ -35,7 +38,7 @@ func (r *Route) LoadPositions() error {
 	
   if r.ID == "" {	return errors.New("route id not informed")	}
 
-  file, error := os.Open("destinatios/"+ r.ID +".txt")
+  file, error := os.Open("destinations/"+ r.ID +".txt")
   if error != nil { return error }
 
   defer file.Close()
@@ -67,6 +70,7 @@ func (r *Route) ExportJsonPositions() ([]string, error) {
   var route PartialRoutePosition
   var result []string
   total := len(r.Positions)
+
   for key, value := range r.Positions {
     
     route.ID = r.ID
