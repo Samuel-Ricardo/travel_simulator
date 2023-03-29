@@ -2,7 +2,7 @@ package kafka
 
 import (
 	"encoding/json"
-	"log"
+	. "log"
 	"os"
 	"time"
 
@@ -13,17 +13,20 @@ import (
 
 func Produce(msg *ckafka.Message) {
   
+  Println("PRODUCING")
+
   producer := kafka.NewKafkaProuducer()
   route := route.NewRoute()
 
   json.Unmarshal(msg.Value, &route)
-  route.LoadPositions()
-  
+  error := route.LoadPositions()
+  if error != nil {Println(error.Error())}
+
   positions, err := route.ExportJsonPositions()
-  if err != nil { log.Println(err.Error()) }
-  
-  for _, p := range positions {
-    kafka.Publish(p, os.Getenv("kafkaProducerTopic"), producer)
+  if err != nil { Println(err.Error()) }
+
+  for _, position := range positions {
+    kafka.Publish(position, os.Getenv("kafkaProduceTopic"), producer)
     time.Sleep(time.Millisecond * 500)
   }
   
