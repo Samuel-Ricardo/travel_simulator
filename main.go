@@ -22,9 +22,8 @@ func main() {
 
   go consumer.Consume()
 
-  for message := range messageChannel {
-
-    fmt.Println(string(message.Value))
-  
+  for message := range messageChannel{
+    fmt.Println("pedro >:()")
+    fmt.Println(string(message.Value)) 
   }
 }
