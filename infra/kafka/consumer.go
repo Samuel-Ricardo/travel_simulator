@@ -17,10 +17,9 @@ func NewKafkaConsumer(messageChannel chan *kafka.Message) *KafkaConsumer {
 
 func (k *KafkaConsumer) Consume() {
   configMap := &kafka.ConfigMap{
-    "bootstrap.servers": os.Getenv("kafkaBootstrapServers"),
+    "bootstrap.servers": os.Getenv("kafkaBootstrapServer"),
     "group.id":         os.Getenv("kafkaConsumerGroupId"),
   }
-
   consumer, err := kafka.NewConsumer(configMap)
   if err != nil { log.Fatalf("Error on cosuming kafka message: "+err.Error()) }
 
@@ -31,7 +30,10 @@ func (k *KafkaConsumer) Consume() {
   fmt.Println("Kafka Consumer  has been started")
 
   for {
+    log.Println("Consumer Started ")
     msg, err := consumer.ReadMessage(-1)
+    log.Println(err)
+    log.Println(msg)
     if err == nil { k.MessageChannel <- msg }
   }
 }
