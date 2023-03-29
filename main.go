@@ -1,12 +1,12 @@
 package main
 
-import kafka2 "github.com/Samuel-Ricardo/travel_simulator/application/kafka"
-
 import (
 	"fmt"
 	"log"
 
+	kafka2 "github.com/Samuel-Ricardo/travel_simulator/application/kafka"
 	"github.com/Samuel-Ricardo/travel_simulator/infra/kafka"
+
 	ckafka "github.com/confluentinc/confluent-kafka-go/kafka"
 	"github.com/joho/godotenv"
 )
