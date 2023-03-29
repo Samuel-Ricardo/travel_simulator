@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+
 	"github.com/confluentinc/confluent-kafka-go/kafka"
 )
 type KafkaConsumer struct {
@@ -16,7 +17,7 @@ func NewKafkaConsumer(messageChannel chan *kafka.Message) *KafkaConsumer {
 
 func (k *KafkaConsumer) Consume() {
   configMap := &kafka.ConfigMap{
-    "bootstrap.server": os.Getenv("kafkaBootstrapServers"),
+    "bootstrap.servers": os.Getenv("kafkaBootstrapServers"),
     "group.id":         os.Getenv("kafkaConsumerGroupId"),
   }
 
@@ -24,7 +25,9 @@ func (k *KafkaConsumer) Consume() {
   if err != nil { log.Fatalf("Error on cosuming kafka message: "+err.Error()) }
 
   topics := []string{os.Getenv("kafkaReadTopic")}
-  consumer.SubscribeTopics(topics, nil)
+  error := consumer.SubscribeTopics(topics, nil)
+  if error != nil { fmt.Printf("Error: cant subscribe in topics") }
+
   fmt.Println("Kafka Consumer  has been started")
 
   for {
