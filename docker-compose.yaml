@@ -2,6 +2,8 @@ version: "3"
 
 services:
   app:
+    networks:
+      - default
     build: .
     container_name: simulator
     volumes:
@@ -9,3 +11,7 @@ services:
     extra_hosts:
       - "host.docker.internal:172.17.0.1"
 
+networks:
+  default:
+    external: true
+    name: apache_kafka_default
