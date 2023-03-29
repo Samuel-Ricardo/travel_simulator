@@ -16,7 +16,7 @@ services:
     extra_hosts:
       - "host.docker.internal:172.17.0.1"
     
-    image: cofluentinc/cp-kafka:latest    
+    image: confluentinc/cp-kafka:latest    
     ports:
       - "9092:9092"
       - "9094:9094"
@@ -31,7 +31,7 @@ services:
     depends_on:
       - kafka
     
-    image: cofluentinc/cp-kafka:latest
+    image: confluentinc/cp-kafka:latest
 
   zookeeper:
     environment:
@@ -39,6 +39,6 @@ services:
     extra_hosts:
       - "host.docker.internal:172.17.0.1"
 
-    image: cofluentinc/cp-zookeeper:latest
+    image: confluentinc/cp-zookeeper:latest
 
 version: '3'
