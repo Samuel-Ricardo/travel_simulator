@@ -5,7 +5,6 @@ services:
     networks:
       - default
     build: .
-    entrypoint: ./.docker/entrypoint.sh
     container_name: simulator
     volumes:
       - .:/go/src/
