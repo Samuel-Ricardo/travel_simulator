@@ -48,10 +48,10 @@ func (r *Route) LoadPositions() error {
 
     data := strings.Split(scanner.Text(), ",")
     
-    latitude, error := strconv.ParseFloat(data[0], 64)
+    latitude, error := strconv.ParseFloat(data[1], 64)
     if error != nil { return nil }
     
-    longitude, err := strconv.ParseFloat(data[1], 64)
+    longitude, err := strconv.ParseFloat(data[0], 64)
     if err != nil { return nil }
 
     r.Positions = append(
