@@ -123,3 +123,13 @@ services:
     extra_hosts:
       "host.docker.internal:172.17.0.1"
 
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.11.2
+    container_name: kib01
+    ports:
+      - 5601:5601
+    environment:
+      ELASTICSEARCH_URL: http://es01:9200
+      ELASTICSEARCH_HOST: '["http://es01:9200"]'
+    extra_hosts:
+      - "host.docker.internal:172.17.0.1"
