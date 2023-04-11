@@ -42,13 +42,13 @@ services:
     hostname: control-center
     depends_on:
       - kafka
-    PORT: 9021
     ports:
       - "9021:9021"
     environment:
       CONTROL_CENTER_BOOTSTRAP_SERVERS: 'kafka:9092'
       CONTROL_CENTER_REPLICATION_FACTOR: 1
       CONTROL_CENTER_CONNECT_CLUSTER: http://kafka-connect:8083
+      PORT: 9021
     extra_hosts:
       - "host.docker.internal:172.17.0.1"
 
@@ -87,7 +87,7 @@ services:
       # when running this offline, spin up the stack once and then run :
       #   docker cp kafka-connect:/usr/share/confluent-hub-components ./data/connect-jars
     volumes:
-      - $PWD/data:/data
+      - ./data:/data
     # In the command section, $ are replaced with $$ to avoid the error 'Invalid interpolation format for "command" option'
     command:
       - bash
@@ -109,7 +109,7 @@ services:
     environment: 
       - node.name=es01
       - cluster.name=es-docker-cluster
-      - cluster.initial_master_node=es01
+      - cluster.initial_master_nodes=es01
       - bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
     ulimits:
@@ -121,7 +121,7 @@ services:
     ports:
       - 9200:9200
     extra_hosts:
-      "host.docker.internal:172.17.0.1"
+      - "host.docker.internal:172.17.0.1"
 
   kibana:
     image: docker.elastic.co/kibana/kibana:7.11.2
