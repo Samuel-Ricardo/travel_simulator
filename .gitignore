@@ -1,3 +1,7 @@
+.docker/apache_kafka/es01
+.docker/apache_kafka/es01/*
+.docker/apache_kafka/es01
+
 .env
 
 # Binaries for programs and plugins
@@ -68,5 +72,4 @@ go.work
 
 
 
-.docker/apache_kafka/es01
-.docker/apache_kafka/es01/*
+
