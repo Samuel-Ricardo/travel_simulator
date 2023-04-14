@@ -10,6 +10,10 @@ import (
 func NewKafkaProuducer() *kafka.Producer {
   configMap := &kafka.ConfigMap{
     "bootstrap.servers": os.Getenv("kafkaBootstrapServer"),
+    "security.protocol": os.Getenv("security.protocol"),
+		"sasl.mechanisms":   os.Getenv("sasl.mechanisms"),
+		"sasl.username":     os.Getenv("sasl.username"),
+		"sasl.password":     os.Getenv("sasl.password"),
   }
 
   producer, err := kafka.NewProducer(configMap)
