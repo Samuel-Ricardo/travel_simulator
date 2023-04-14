@@ -69,4 +69,4 @@ go.work
 
 
 .docker/apache_kafka/es01
-
+.docker/apache_kafka/es01/*
