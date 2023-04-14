@@ -1,0 +1,63 @@
+
+POST route.new-position/_delete_by_query?conflicts=proceed 
+{
+  "query": {"match_all":{}}
+}
+
+
+POST route.new-direction/_delete_by_query?conflicts=proceed
+{
+  "query":{
+    "match_all":{}
+  }
+}
+
+
+
+
+PUT route.new-position
+{
+  "mappings": {
+    "properties": {
+      "clientId": {
+        "type": "text",
+        "fields": {
+          "keyword": {"type": "keyword"}
+        }
+      },
+      "routeId": {
+        "type": "text",
+        "fields": {
+          "keywords": {"type": "keyword"}
+        }
+      },
+      "timestamp": {"type": "date"},
+      "finished" : {"type": "boolean"},
+      "position" : {"type": "geo_point"}
+    }
+  }
+}
+
+
+PUT route.new-direction
+{
+  "mappings": {
+    "properties": {
+      "clientId": {
+        "type": "text",
+        "fields": {
+          "keyword": { "type": "keyword" }
+        }
+      },
+      "routeId":{
+        "type": "text",
+        "fields": {
+          "keyword": { "type": "keyword" }
+        }
+      },
+      "timestamp": {
+        "type": "date"
+      }
+    }
+  }
+}
