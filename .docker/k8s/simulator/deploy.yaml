@@ -6,7 +6,7 @@ spec:
   replicas: 1
   selector:
     matchLabels: 
-    app: simulator
+      app: simulator
   template: 
     metadata:
       labels:
@@ -14,16 +14,16 @@ spec:
     spec:
       containers:
         - name: simulator
-          image: samuel/codelivery/simulator:latest
+          image: samuelrcabral/codelivery_simulator:latest
           volumeMounts:
             - name: simulator-volume
-              mounthPath: /go/src/.env
+              mountPath: /go/src/.env
               subPath: .env
 
-    Volumes:
-      - name: simulator-volume
-        configMap:
-          name: simulator-conf
-          items:
-            - key: env
-              path: .env
+      volumes:
+        - name: simulator-volume
+          configMap:
+            name: simulator-conf
+            items:
+              - key: env
+                path: .env
