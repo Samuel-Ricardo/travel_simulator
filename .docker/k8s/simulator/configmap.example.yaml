@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata: 
+  name: simulator-conf
+data: 
+env: |
+  kafkaReadTopic=route.new-direction
+  kafkaProduceTopic=route.new-position
+  kafkaBootstrapServer=localhost:9092
+  kafkaConsumerGroupId=simulator
+  bootstrap.servers=
+  security.protocol=
+  sasl.mechanisms=
+  sasl.username=
+  sasl.password=
+  session.timeout.ms=
+
