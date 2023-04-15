@@ -2,8 +2,7 @@
 .docker/apache_kafka/es01/*
 .docker/apache_kafka/es01/
 
-.docker/apache_kafka/k8s/configmap.yaml
-
+.docker/k8s/simulator/configmap.yaml
 .env
 
 # Binaries for programs and plugins
