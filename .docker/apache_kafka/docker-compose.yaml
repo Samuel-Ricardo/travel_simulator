@@ -1,7 +1,6 @@
 version: "3"
 
-services:  
-
+services:
   zookeeper:
     image: confluentinc/cp-zookeeper:latest
     environment:
@@ -24,6 +23,11 @@ services:
       KAFKA_LISTENERS: INTERNAL://:9092,OUTSIDE://:9094
       KAFKA_ADVERTISED_LISTENERS: INTERNAL://kafka:9092,OUTSIDE://host.docker.internal:9094
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INTERNAL:PLAINTEXT,OUTSIDE:PLAINTEXT
+      #KAFKA_PRODUCER_MAX_REQUEST_SIZE: 369295617
+      #KAFKA_MESSAGE_MAX_BYTES: 369295617
+      #KAFKA_SOCKET_REQUEST_MAX_BYTES: 369295617
+      #KAFKA_REPLICA_FETCH_MAX_BYTES: 369295617
+      #KAFKA_HEAP_OPTS: -Xmx2G -Xms2G
     extra_hosts:
       - "host.docker.internal:172.17.0.1"
 
@@ -45,7 +49,7 @@ services:
     ports:
       - "9021:9021"
     environment:
-      CONTROL_CENTER_BOOTSTRAP_SERVERS: 'kafka:9092'
+      CONTROL_CENTER_BOOTSTRAP_SERVERS: "kafka:9092"
       CONTROL_CENTER_REPLICATION_FACTOR: 1
       CONTROL_CENTER_CONNECT_CLUSTER: http://kafka-connect:8083
       PORT: 9021
@@ -55,7 +59,7 @@ services:
   kafka-connect:
     image: confluentinc/cp-kafka-connect-base:6.0.0
     container_name: kafka-connect
-    depends_on: 
+    depends_on:
       - zookeeper
       - kafka
     ports:
@@ -106,7 +110,7 @@ services:
   es01:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.11.2
     container_name: es01
-    environment: 
+    environment:
       - node.name=es01
       - cluster.name=es-docker-cluster
       - cluster.initial_master_nodes=es01
