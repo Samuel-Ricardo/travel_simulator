@@ -19,10 +19,10 @@ func (k *KafkaConsumer) Consume() {
   configMap := &kafka.ConfigMap{
     "bootstrap.servers": os.Getenv("kafkaBootstrapServer"),
     "group.id":         os.Getenv("kafkaConsumerGroupId"),
-    "security.protocol": os.Getenv("security.protocol"),
-		"sasl.mechanisms":   os.Getenv("sasl.mechanisms"),
-		"sasl.username":     os.Getenv("sasl.username"),
-		"sasl.password":     os.Getenv("sasl.password"),
+    //"security.protocol": os.Getenv("security.protocol"),
+		//"sasl.mechanisms":   os.Getenv("sasl.mechanisms"),
+    //"sasl.username":     os.Getenv("sasl.username"),
+		//"sasl.password":     os.Getenv("sasl.password"),
   }
   consumer, err := kafka.NewConsumer(configMap)
   if err != nil { log.Fatalf("Error on cosuming kafka message: "+err.Error()) }
