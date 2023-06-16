@@ -74,6 +74,8 @@
 
 #
 
+<br>
+
 <h2 id="techs">
   :building_construction: | Technologies and Concepts Studied:
 </h2>
@@ -94,6 +96,8 @@
 
 > Among Others...
 
+<br>
+
 #
 
 <h2 id="app">
@@ -103,3 +107,38 @@
 <img src="./readme_files/scheme.png" />
 
 #
+
+<h2 id="run-project"> 
+   👨‍💻 | How to use
+</h2>
+
+### Open your Git Terminal and clone this repository
+
+```git
+  $ git clone "git@github.com:Samuel-Ricardo/travel_simulator.git"
+```
+
+### Make Pull
+
+```git
+  $ git pull "git@github.com:Samuel-Ricardo/travel_simulator.git"
+```
+
+This application use `Docker` so you dont need to install and cofigurate anything other than docker on your machine.
+
+> <a target="_blank" href="https://www.docker.com/"> <img width="48px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-plain-wordmark.svg" /> </a>
+
+```bash
+
+  # After setup docker just run this commmand on project folder:
+
+  $ docker-compose up --build   # For First Time run this command
+
+  $ docker-compose up           # to run project
+
+
+```
+
+#
+
+<br>
