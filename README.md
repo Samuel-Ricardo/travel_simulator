@@ -90,6 +90,7 @@
 - Perfomance
 - Event Driven Architeture
 - Scalability
+- Real Time
 
 > Among Others...
 
@@ -98,3 +99,7 @@
 <h2 id="app">
   💻 | Application:
 </h2>
+
+<img src="./readme_files/scheme.png" />
+
+#
