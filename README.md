@@ -112,6 +112,8 @@
    👨‍💻 | How to use
 </h2>
 
+<br>
+
 ### Open your Git Terminal and clone this repository
 
 ```git
@@ -124,13 +126,39 @@
   $ git pull "git@github.com:Samuel-Ricardo/travel_simulator.git"
 ```
 
+<br>
+
 This application use `Docker` so you dont need to install and cofigurate anything other than docker on your machine.
 
 > <a target="_blank" href="https://www.docker.com/"> <img width="48px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-plain-wordmark.svg" /> </a>
 
+<br>
+
+<p align="justify">
+
+First you need to up Apache Kafka and Elastic Search environment, we will use docker for this. so let's to apache folder `$ cd ./.docker/apache_kafka/` and run it.
+
+</p>
+
 ```bash
 
-  # After setup docker just run this commmand on project folder:
+  # Once docker is configured:
+
+  $ cd ./.docker/apache_kafka/
+  $ docker-compose up
+
+
+```
+
+<p align="justify">
+
+Once Apache Kafka, Zookeper, Elastic Search and Kibana are up, we can start the project :D (to go back for root project folder: `$ cd ../../`)
+
+</p>
+
+```bash
+
+  # After setup docker environment just run this commmand on root project folder:
 
   $ docker-compose up --build   # For First Time run this command
 
