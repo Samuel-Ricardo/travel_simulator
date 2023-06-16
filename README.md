@@ -153,7 +153,7 @@ First you need to up Apache Kafka and Elastic Search environment, we will use do
 
 <p align="justify">
 
-Once Apache Kafka, Zookeper, Elastic Search and Kibana are up, we can start the project :D (to go back for root project folder: `$ cd ../../`)
+Once Apache Kafka, Confluent Dashboard, Zookeper, Elastic Search and Kibana are up, we can start the project :D (to go back for root project folder: `$ cd ../../`)
 
 </p>
 
@@ -165,6 +165,20 @@ Once Apache Kafka, Zookeper, Elastic Search and Kibana are up, we can start the 
 
   $ docker-compose up           # to run project
 
+
+```
+
+```bash
+
+  #Apps Running on:
+
+  $ Elastic Search: http://localhost:9200
+
+  $ Kibana: http://localhost:5601
+
+  $ [Kafka] Confluent Dashboard: http://localhost:9021
+
+  See more: ./.docker/apache_kafka/docker-compose.yaml
 
 ```
 
