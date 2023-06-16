@@ -1,4 +1,4 @@
-# travel_simulator
+# Travel Simulator
 
 <p align="center"> 
   <a href="https://fullcycle.com.br/" target="_blank">
@@ -48,15 +48,19 @@
 <h2>  | :artificial_satellite: About:  </h2>
 
 <p align="justify">
-   
+  This project is a application of a complete Full Cycle project, with amazing technologies like NextJS for front-end, NestJS for back-end, PostgreSQL database, GO Lang for microsservice, Docker & Kubernetes for devops, metrics with Elastic Search & Kibana, Message / Event Driven Architeture with Kafka and more.
 </p>
 
 <p align="justify">
- 
+  The propurse of this microsservice is only one, simulate and provide travels routes for all applications of this project, for this comunication between apps, i use Kafka that is a amazing solution to handle data traffic using events, super scaleble, garant the safety of every byte of data whithout data loses.
 </p>
 
 <p align="justify">
-  
+  The Kubernetes manages this applications on Google Cloud Platform, with a amazing peformance and scalability. Kubernetes is a container orchestrator thats ensures resilience to your application using the most advanced strategies for handle your applications
+</p>
+
+<p align="justify">
+   All goes as data stream having Kafka as intermediator thats ensures no loses keeping the original order of the message even though something crash, when it back to work will run as if nothing has happen, it all is sended to back-end that processes them and send to front-end.
 </p>
 
 > <a href="https://samuel-ricardo.github.io/"> <img src="./readme_files/app_preview.png"> </a>
