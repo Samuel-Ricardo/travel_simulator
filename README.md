@@ -69,8 +69,16 @@
 
   <br>
   
-- This Microsservice is hosted on Google Cloud Platform - [GCP] 
+- This Microsservice is hosted on Google Cloud Platform - [GCP] with Kubernetes 
 - Current Version: <b> 1.0.0 </b>
+
+#
+
+<br/>
+
+- Front-End : NextJS | [ [repositories](https://github.com/Samuel-Ricardo/codelivery-site) ]
+- Back-End : NestJS | [ [repositories](https://github.com/Samuel-Ricardo/codelivery_api) ]
+- microsservice : GO Lang | [ [repositories](https://github.com/Samuel-Ricardo/travel_simulator/tree/main) ]
 
 #
 
