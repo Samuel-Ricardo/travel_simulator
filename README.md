@@ -119,8 +119,19 @@
 </h2>
 
 <img src="./readme_files/scheme.png" />
+| Project Scheme
 
 <img src="./readme_files/deploy.png"/>
+| Google Cloud Platform
+
+<img src="./readme_files/confluent.png"/>
+| Confluent Dashboard - [Kafka]
+
+<img src="./readme_files/elastic_platform.png"/>
+| Elastic Platform
+
+<img src="./readme_files/kibana.png"/>
+| Kibana Data Analytics
 
 #
 
