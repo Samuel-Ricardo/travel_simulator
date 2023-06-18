@@ -72,6 +72,12 @@
 - This Microsservice is hosted on Google Cloud Platform - [GCP] with Kubernetes 
 - Current Version: <b> 1.0.0 </b>
 
+<br>
+
+> <a target="_blank" href="https://cloud.google.com/?hl=pt-br"> <img width="128px" src="https://i.pcmag.com/imagery/reviews/02yVL9f8Jw1atwoG6sgFZDH-7..v1569482492.jpg"/> </a>
+
+<br>
+
 #
 
 <br/>
